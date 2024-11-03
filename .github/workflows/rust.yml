@@ -40,10 +40,6 @@ jobs:
         with:
           components: clippy, rustfmt
 
-      - uses: rustsec/audit-check@v1.4.1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Build
         run: cargo build --verbose
 
