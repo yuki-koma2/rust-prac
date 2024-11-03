@@ -34,5 +34,5 @@ jobs:
       - name: Run clippy
         run: cargo clippy -- -D warnings
 
-      - name: Check formatting
-        run: cargo fmt --check
+#      - name: Check formatting　そのうち有効にする。formatくらい自動化したい。rustRoberの設定が必要
+#        run: cargo fmt --check
