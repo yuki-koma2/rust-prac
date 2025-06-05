@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>WASM Calculator</title>
+    <style>
+        body { font-family: sans-serif; }
+        .display { width: 200px; height: 40px; margin-bottom: 10px; font-size: 24px; text-align: right; }
+        .keys { display: grid; grid-template-columns: repeat(4, 50px); grid-gap: 5px; }
+        button { height: 50px; font-size: 18px; }
+    </style>
+</head>
+<body>
+    <div>
+        <input class="display" id="display" type="text" readonly />
+    </div>
+    <div class="keys">
+        <button data-val="7">7</button>
+        <button data-val="8">8</button>
+        <button data-val="9">9</button>
+        <button data-val="/">/</button>
+
+        <button data-val="4">4</button>
+        <button data-val="5">5</button>
+        <button data-val="6">6</button>
+        <button data-val="*">*</button>
+
+        <button data-val="1">1</button>
+        <button data-val="2">2</button>
+        <button data-val="3">3</button>
+        <button data-val="-">-</button>
+
+        <button data-val="0">0</button>
+        <button id="clear">C</button>
+        <button id="delete">Del</button>
+        <button data-val="+">+</button>
+
+        <button id="enter" style="grid-column: span 4">Enter</button>
+    </div>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
