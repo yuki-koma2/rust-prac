@@ -1,6 +1,8 @@
 use std::env;
 use std::str::FromStr;
 
+mod parser;
+
 fn main() {
     println!("Hello, world!");
     // Vec is a growable array
