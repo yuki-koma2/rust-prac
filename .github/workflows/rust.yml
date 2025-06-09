@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        app-dir: [ hello-koma, actix-gcd ]
+        app-dir: [ hello-koma, actix-gcd, wasm-calculator/calc ]
     defaults:
       run:
         working-directory: ${{ matrix.app-dir }}
@@ -25,8 +25,17 @@ jobs:
         with:
           components: clippy, rustfmt
 
+      - name: Install wasm-pack
+        if: matrix.app-dir == 'wasm-calculator/calc'
+        run: |
+          curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+
       - name: Build
         run: cargo build --verbose
+
+      - name: Build wasm package
+        if: matrix.app-dir == 'wasm-calculator/calc'
+        run: wasm-pack build --release
 
       - name: Run tests
         run: cargo test --verbose
