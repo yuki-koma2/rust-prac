@@ -28,6 +28,16 @@ async function testError() {
   assert.strictEqual(display.value, '');
 }
 
+async function testInjection() {
+  const display = { value: '1+process.exit()' };
+  const button = createButton();
+  setupCalculator(display, button);
+  button.listeners.click();
+  assert.strictEqual(display.value, 'エラー');
+  await new Promise(r => setTimeout(r, 2100));
+  assert.strictEqual(display.value, '');
+}
+
 async function testEmptyInput() {
   const display = { value: '   ' };
   const button = createButton();
@@ -39,6 +49,7 @@ async function testEmptyInput() {
 (async () => {
   await testSuccess();
   await testError();
+  await testInjection();
   await testEmptyInput();
   console.log('All tests passed');
 })();
