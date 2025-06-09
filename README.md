@@ -24,21 +24,23 @@ Rustの学習のための小規模プロジェクトを保存するリポジト�
 
 ## ビルド手順例
 
+各プロジェクトのコマンドは、リポジトリのルートディレクトリから実行することを想定しています。
+
 ```bash
 # hello-koma
 cd hello-koma
 cargo run
 
 # actix-gcd
-cd ../actix-gcd
+cd actix-gcd # Assumes starting from repository root
 cargo run
 
 # weather-app backend
-cd ../weather-app/backend
+cd weather-app/backend # Assumes starting from repository root
 cargo run
 
 # weather-app frontend
-cd ../frontend
+cd weather-app/frontend # Assumes starting from repository root
 npm install
 npm run dev
 ```
