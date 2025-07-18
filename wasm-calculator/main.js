@@ -32,4 +32,7 @@ async function run() {
     });
 }
 
-run();
+run().catch(error => {
+    console.error('WebAssembly\u521d\u671f\u5316\u30a8\u30e9\u30fc:', error);
+    alert('\u8a08\u7b97\u6a5f\u306e\u521d\u671f\u5316\u306b\u5931\u6557\u3057\u307e\u3057\u305f');
+});
